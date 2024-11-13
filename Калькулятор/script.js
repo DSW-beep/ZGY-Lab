@@ -7,7 +7,6 @@ window.onload = function(){
     let selectedOperation = null
     let last = ''
     let lastOper = null
-
     // окно вывода результата
     outputElement = document.getElementById("result")
 
@@ -36,10 +35,8 @@ window.onload = function(){
             }
         }
         outputElement.innerHTML = selectedOperation ? `${a} ${selectedOperation} ${b}` : a.slice(0,15);
-
     }
-
-    // устанавка колбек-функций на кнопки циферблата по событию нажатия
+    //Циферблат по событиям нажатий
     digitButtons.forEach(button => {
         button.onclick = function() {
             const digitValue = button.innerHTML
@@ -58,9 +55,7 @@ window.onload = function(){
         if (a === '') return
         selectedOperation = 'x'
         Update();
-
     }
-
     document.getElementById("btn_op_plus").onclick = function() {
         if (a === '') return
         selectedOperation = '+'
@@ -79,22 +74,18 @@ window.onload = function(){
         selectedOperation = '/'
         Update();
     }
-
     document.getElementById("btn_op_sign").onclick = function() {
         if(a === '') return
         if(!selectedOperation){
             a = a * (-1)
             outputElement.innerHTML = a
-
         }
         else{
             b = b * (-1)
             outputElement.innerHTML = b
-
         }
         Update()
     }
-
     document.getElementById("btn_op_percent").onclick = function() {
         if(a === '') return
         if (!selectedOperation){
@@ -115,7 +106,6 @@ window.onload = function(){
         expressionResult = ''
         outputElement.innerHTML = 0
     }
-
     document.getElementById('btn_op_backspace').onclick = function(){
         if(!selectedOperation){
             a = a.slice(0, -1);
@@ -127,17 +117,14 @@ window.onload = function(){
             }
         }
     }
-
     document.getElementById('btn_op_stepen').onclick = function(){
         a = a * a
         outputElement.innerHTML = a.toString().slice(0,15)
-
     }
     document.getElementById('btn_op_coren').onclick = function(){
         a = Math.sqrt(a)
         a = a
         outputElement.innerHTML = a.toString().slice(0,15)
-
     }
     document.getElementById('btn_op_factorial').onclick = function(){
 
@@ -153,7 +140,6 @@ window.onload = function(){
         }
         a = factorial
         outputElement.innerHTML = a.toString().slice(0,15)
-
     }
     document.getElementById('btn_op_three_zero').onclick = function(){
         if(!selectedOperation){
@@ -165,9 +151,7 @@ window.onload = function(){
             outputElement.innerHTML = b
         }
         outputElement.innerHTML = `${a} ${selectedOperation} ${b}`
-
     }
-
     // кнопка расчёта результата
     document.getElementById("btn_op_equal").onclick = function() {
         if (a === '' && expressionResult) {
@@ -198,14 +182,11 @@ window.onload = function(){
                 expressionResult = (+a) / (+b);
                 break;
         }
-
         // Обновляем `a` на результат для отображения
         a = expressionResult.toString()
-
         // Запоминаем последний операнд и операцию для накопления
         last = b;
         lastOper = selectedOperation;
-
         // Очищаем `b` и текущую операцию, чтобы быть готовыми к следующему вводу
         b = '';
         selectedOperation = '';
