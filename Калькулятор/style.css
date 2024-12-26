@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;     /* Center horizontally */
+    min-height: 100vh;       /* Ensure it takes up full viewport height */
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.dark-theme .my_but{
+    background: #240101;
+    color: yellow;
+}
+
+.dark-theme .primary{
+    background: #065c5a;
+    color: blue;
+}
+.dark-theme .secondary{
+    background: #110124;
+}
+.dark-theme .sloy{
+    background: #110124;
+}
+.dark-theme #result{
+    background: #d5d5d5;
+}
+
+.sloy{
+    border: solid 2px black;
+    border-radius: 10px;
+    background: #065c5a;
+    user-select: none;
+    padding: 0 8px 15px 7px;
+}
+
+.display {
+    flex: 1;
+    background-color: #eee;
+    padding: 10px;
+    text-align: right;
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    flex: 1 1 25%;
+    padding: 10px;
+    margin: 2px;
+    font-size: 18px;
+    background-color:#f5c690;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.my_but.primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#theme-toggle{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    background-image: url(dark-mode.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+body{
+    background-image: url(111.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my_but.secondary {
+    background-color: #ddd;
+}
+
+.execute {
+    background-color: #2196F3; /* Blue */
+    color: white;
+}
+
+details {
+    margin-top: 20px;
+}
+
+#info{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+
+}
+summary {
+    list-style: none;
+}
+
+#github{
+    color: lightgreen;
+    text-decoration: none;
+}
